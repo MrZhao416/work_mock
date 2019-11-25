@@ -4,10 +4,45 @@ var router = express.Router();
 
 var data = {
   "data": [{
-    "date": "2016-05-02 15:35",
-    "name": "王小虎",
+    "expire_date": "2016-05-02 15:35",
+    "username": "王小虎1",
     "email": "1218392210@qq.com",
-    "phone": "18435189212"
+    "phone": "18435189212",
+    "dateflag":false,
+    "usernameflag":false,
+    "emailflag":false,
+    "phoneflag":false,
+  },
+  {
+    "expire_date": "2016-05-02 15:35",
+    "username": "王小虎2",
+    "email": "1218392210@qq.com",
+    "phone": "18435189212",
+    "dateflag":false,
+    "usernameflag":false,
+    "emailflag":false,
+    "phoneflag":false,
+  },
+  {
+    "expire_date": "2016-05-02 15:35",
+    "username": "王小虎3",
+    "email": "1218392210@qq.com",
+    "phone": "18435189212",
+    "dateflag":false,
+    "usernameflag":false,
+    "emailflag":false,
+    "phoneflag":false,
+  },
+ 
+  ]
+}
+
+var data2 = {
+  "data": [{
+    "date": "2016-05-02 15:35",
+    "name": "王小虎3",
+    "email": "1218392210@qq.com",
+    "phone": "184351892dsadadaa12"
   },
   {
     "date": "2016-05-02 15:35",
@@ -36,6 +71,23 @@ var data = {
   ]
 }
 
+
+var data3 = {
+  "data": [{
+    "date": "2016-05-02 15:35",
+    "name": "王小虎3",
+    "email": "1218392210@qq.com",
+    "phone": "184351892dsadadaa12"
+  },
+  {
+    "date": "2016-05-02 15:35",
+    "name": "赵小虎",
+    "email": "1218392210@qq.com",
+    "phone": "18435189212"
+  }
+
+  ]
+}
 var option = {
   "option": [
     {
@@ -156,27 +208,27 @@ router.post('/login', function (req, res, next) {
 
 const user1 = {
   "username": "张三",
-  "安全服务配置": [1, 4, 3],
+  "安全服务器配置": [1, 4, 3],
   "数据来源可视化": [1, 4]
 }
 
 const user2 = {
   "username": "李四",
-  "安全服务配置": [1, 4, 3]
+  "安全服务器配置": [1, 4, 3]
 }
 
 const user3 = {
   "username": "王五",
-  "安全服务配置": [1, 4, 3],
-  "安全服务配置2": [1, 4, 3],
-  "安全服务配置3": [1, 4, 3],
-  "安全服务配置4": [1, 2, 3],
+  "安全服务器配置": [1, 4, 3],
+  "安全服务器配置2": [1, 4, 3],
+  "安全服务器配置3": [1, 4, 3],
+  "安全服务器配置4": [1, 2, 3],
 
 }
 router.post('/getUserPermission', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  console.log(req.body);
-  switch (req.body) {
+  console.log(req.body.username);
+  switch (req.body.username) {
     case "张三":
       res.send(user1);
       break;
@@ -199,7 +251,7 @@ router.post('/getUserPermission', function (req, res, next) {
 
 
 
-//登出
+// 登出
 // router.post('/user/logout', function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.send({"code":200,"status":"success","data":"sucess"});
@@ -207,4 +259,15 @@ router.post('/getUserPermission', function (req, res, next) {
 
 
 
+router.post('/editPerson', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  console.log(req.query)
+  res.json(data2);
+});
+
+router.post('/delPerson', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  console.log(req.query)
+  res.json(data3);
+});
 module.exports = router;
