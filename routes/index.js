@@ -174,6 +174,52 @@ option2 = [
 
 
 ]
+
+
+var tableData= [
+  {
+    groupname: "group1",
+    config: [
+      {
+        inatance: "instance1",
+        ip: "192.168.1.1",
+        port: "3000",
+        connect: "连接",
+        init_status: "已初始化",
+        value: ""
+      },
+      {
+        inatance: "instance2",
+        ip: "192.168.1.1",
+        port: "3000",
+        connect: "连接",
+        init_status: "已初始化",
+        value: ""
+      }
+    ]
+  },
+  {
+    groupname: "group2",
+    config: [
+      {
+        inatance: "instance1",
+        ip: "192.168.1.1",
+        port: "3000",
+        connect: "连接",
+        init_status: "已初始化",
+        value: ""
+      },
+      {
+        inatance: "instance2",
+        ip: "192.168.1.1",
+        port: "3000",
+        connect: "连接",
+        init_status: "已初始化",
+        value: ""
+      }
+    ]
+  }
+]
 /* GET home page. */
 router.get('/data', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -196,10 +242,10 @@ router.get('/permission2', function (req, res, next) {
 
 
 //登录
-router.post('/login', function (req, res, next) {
+router.post('/auth/login', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   console.log(req.body);
-  res.send("success");
+  res.send("logged_in");
 });
 
 
@@ -269,5 +315,13 @@ router.post('/delPerson', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   console.log(req.query)
   res.json(data3);
+});
+
+
+
+//instance实例 信息获取
+router.get('/auth/instance', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.json(tableData);
 });
 module.exports = router;
