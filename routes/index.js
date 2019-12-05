@@ -177,6 +177,9 @@ option2 = [
 
 
 var tableData= [
+  
+  
+  
   {
     groupname: "group1",
     config: [
@@ -218,7 +221,9 @@ var tableData= [
         value: ""
       }
     ]
-  }
+  },
+  
+  
 ]
 /* GET home page. */
 router.get('/data', function (req, res, next) {
@@ -323,5 +328,14 @@ router.post('/delPerson', function(req, res, next) {
 router.get('/auth/instance', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.json(tableData);
+});
+
+
+
+//改变连接状态
+router.post('/changeConnect', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  console.log(req.body);
+  res.send("success");
 });
 module.exports = router;
