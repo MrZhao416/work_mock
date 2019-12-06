@@ -184,7 +184,7 @@ var tableData= [
     groupname: "group1",
     config: [
       {
-        inatance: "instance1",
+        instance: "instance1",
         ip: "192.168.1.1",
         port: "3000",
         connect: "连接",
@@ -192,7 +192,7 @@ var tableData= [
         value: ""
       },
       {
-        inatance: "instance2",
+        instance: "instance2",
         ip: "192.168.1.1",
         port: "3000",
         connect: "连接",
@@ -205,7 +205,7 @@ var tableData= [
     groupname: "group2",
     config: [
       {
-        inatance: "instance1",
+        instance: "instance1",
         ip: "192.168.1.1",
         port: "3000",
         connect: "连接",
@@ -213,7 +213,7 @@ var tableData= [
         value: ""
       },
       {
-        inatance: "instance2",
+        instance: "instance2",
         ip: "192.168.1.1",
         port: "3000",
         connect: "连接",
@@ -338,4 +338,6 @@ router.post('/changeConnect', function (req, res, next) {
   console.log(req.body);
   res.send("success");
 });
+
+
 module.exports = router;
