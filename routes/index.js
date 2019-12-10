@@ -8,32 +8,32 @@ var data = {
     "username": "王小虎1",
     "email": "1218392210@qq.com",
     "phone": "18435189212",
-    "dateflag":false,
-    "usernameflag":false,
-    "emailflag":false,
-    "phoneflag":false,
+    "dateflag": false,
+    "usernameflag": false,
+    "emailflag": false,
+    "phoneflag": false,
   },
   {
     "expire_date": "2016-05-02 15:35",
     "username": "王小虎2",
     "email": "1218392210@qq.com",
     "phone": "18435189212",
-    "dateflag":false,
-    "usernameflag":false,
-    "emailflag":false,
-    "phoneflag":false,
+    "dateflag": false,
+    "usernameflag": false,
+    "emailflag": false,
+    "phoneflag": false,
   },
   {
     "expire_date": "2016-05-02 15:35",
     "username": "王小虎3",
     "email": "1218392210@qq.com",
     "phone": "18435189212",
-    "dateflag":false,
-    "usernameflag":false,
-    "emailflag":false,
-    "phoneflag":false,
+    "dateflag": false,
+    "usernameflag": false,
+    "emailflag": false,
+    "phoneflag": false,
   },
- 
+
   ]
 }
 
@@ -176,55 +176,29 @@ option2 = [
 ]
 
 
-var tableData= [
-  
-  
-  
-  {
-    groupname: "group1",
-    config: [
-      {
-        instance: "instance1",
-        ip: "192.168.1.1",
-        port: "3000",
-        connect: "连接",
-        init_status: "已初始化",
-        value: ""
-      },
-      {
-        instance: "instance2",
-        ip: "192.168.1.1",
-        port: "3000",
-        connect: "连接",
-        init_status: "已初始化",
-        value: ""
-      }
-    ]
-  },
-  {
-    groupname: "group2",
-    config: [
-      {
-        instance: "instance1",
-        ip: "192.168.1.1",
-        port: "3000",
-        connect: "连接",
-        init_status: "已初始化",
-        value: ""
-      },
-      {
-        instance: "instance2",
-        ip: "192.168.1.1",
-        port: "3000",
-        connect: "连接",
-        init_status: "已初始化",
-        value: ""
-      }
-    ]
-  },
-  
-  
-]
+var tableData = {
+  "group1": [{
+    instance_connect_status: "0", 
+    instance_group: "0", 
+    instance_ip: "172.17.0.1", 
+    instance_name: "instance5", 
+    instance_port: "3306", 
+  }],
+  "group2": [{
+    instance_connect_status: "0", 
+    instance_group: "0", 
+    instance_ip: "172.17.0.1", 
+    instance_name: "instance5", 
+    instance_port: "3306", 
+  }],
+  "group3": [{
+    instance_connect_status: "0", 
+    instance_group: "0", 
+    instance_ip: "172.17.0.1", 
+    instance_name: "instance5", 
+    instance_port: "3306", 
+  }],
+}
 /* GET home page. */
 router.get('/data', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -310,13 +284,13 @@ router.post('/getUserPermission', function (req, res, next) {
 
 
 
-router.post('/editPerson', function(req, res, next) {
+router.post('/editPerson', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   console.log(req.query)
   res.json(data2);
 });
 
-router.post('/delPerson', function(req, res, next) {
+router.post('/delPerson', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   console.log(req.query)
   res.json(data3);
